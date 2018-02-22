@@ -1,0 +1,19 @@
+@font-face {
+  font-family: 'LibreBaskervilleItalic';
+  src: url("../fonts/libre-baskerville.italic.ttf") format("opentype");
+}
+
+@font-face {
+  font-family: 'RalewayRegular';
+  src: url("../fonts/Raleway-Regular.ttf") format("opentype");
+}
+
+@font-face {
+  font-family: 'RalewayBold';
+  src: url("../fonts/Raleway-Bold.ttf") format("opentype");
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
