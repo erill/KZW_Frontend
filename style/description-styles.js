@@ -1,11 +1,10 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  margin: 0 15%;
+  margin: 0 14%;
   padding: 20px 0;
   background-color: #FCFCFC;
   font-family: 'RalewayRegular', sans-serif;
-
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -50,8 +49,13 @@ export const SmallImage = styled.img`
 `;
 
 export const TextContainer = styled.div`
-  margin: 0 7%;
+  margin: 0 12%;
   flex: 1;
+  text-align: right;
+  text-align: ${props => props.textAlign ? props.textAlign : 'left' };
+  @media (max-width: 1199px) {
+    text-align: left;
+  }
 `;
 
 export const SubHeader = styled.h3`
