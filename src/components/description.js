@@ -8,7 +8,7 @@ export default (props) => {
         <BigImage src={props.img} alt={props.imgTitle} />
         <SmallImage src={props.imgSmall} alt={props.imgTitle} />
       </ImageContainer>
-      <TextContainer textAlign={props.align}>
+        <TextContainer textAlign={props.align}>
         <SubHeader>{props.subHeader}</SubHeader>
         <Header>{props.header}</Header>
         <Text>{props.text}</Text>
