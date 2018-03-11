@@ -1,9 +1,23 @@
 import React, { Component } from 'react';
 
+import AboutProject from './AboutProject/about_project';
+import Greetings from './Greetings/greetings';
+import Nav from './Navigation/nav';
+import TrainingMetamorphosis from './Training/training';
+import Carousel from './Carousel/carousel';
+import GalleryBox from './Gallery/gallery';
+
 export default class App extends Component {
   render() {
     return (
-      <div>React simple starter</div>
+      <div>
+        <Nav />
+        <Carousel />
+        <AboutProject />
+        <TrainingMetamorphosis />
+        <Greetings />
+        <GalleryBox />
+      </div>
     );
   }
 }
