@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Slider from 'react-slick';
-import { SlideImage } from '../../style/carousel-styles';
+import { SlideImage } from './carousel-styles';
 
 function SamplePrevArrow(props) {
   const {className, style, onClick} = props

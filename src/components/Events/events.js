@@ -1,5 +1,5 @@
 import React from 'react';
-import { EventsIcon, EventsIconHeader, EventsIconText, Image } from '../../style/description-styles';
+import { EventsIcon, EventsIconHeader, EventsIconText, Image } from './events-styles';
 
 export default (props) => {
   return (

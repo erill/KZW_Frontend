@@ -1,5 +1,5 @@
 import React from 'react';
-import { TileContainer, Header, Text } from '../../style/tiles-style';
+import { TileContainer, Header, Text } from './tiles-style';
 
 export default (props) => {
   return (

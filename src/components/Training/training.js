@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import Description from './description';
-import Event from './events';
-import { Parallax } from '../../style/description-styles';
-import { EventsIconContainer } from '../../style/description-styles';
+import Description from '../Description/description';
+import Event from '../Events/events';
+import { Parallax, EventsIconContainer } from '../Description/description-styles';
 
 export default class TrainingMetamorphosis extends Component {
   render() {

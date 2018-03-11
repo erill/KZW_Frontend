@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
-import Description from './description';
-import TextHeader from './text_header';
-import Tile from './tile';
-import { Container } from '../../style/tiles-style';
+
+
+import Description from '../Description/description';
+import TextHeader from '../TextHeader/text_header';
+import Tile from '../Tile/tile';
+import { Container } from '../Tile/tiles-style';
 
 export default class AboutProject extends Component {
   render() {

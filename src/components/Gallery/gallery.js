@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import Gallery from 'react-grid-gallery';
-import { Container, GalleryContainer, Header } from '../../style/gallery';
+import { Container, GalleryContainer, Header } from './gallery-styles';
 
   const preEventImages =
   [{

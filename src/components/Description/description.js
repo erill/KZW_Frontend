@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, ImageContainer, BigImage, SmallImage , TextContainer, SubHeader, Header, Text } from '../../style/description-styles';
+import { Container, ImageContainer, BigImage, SmallImage , TextContainer, SubHeader, Header, Text } from './description-styles';
 
 export default (props) => {
   return (

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Header, Text } from '../../style/text-header-styles';
+import { Container, Header, Text } from './text-header-styles';
 
 export default (props) => {
   return (

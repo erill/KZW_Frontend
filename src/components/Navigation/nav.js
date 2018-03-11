@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Media from "react-media";
 import { slide as Menu } from 'react-burger-menu';
-import { Container, MenuItem } from '../../style/nav';
+import { Container, MenuItem } from './nav-styles';
 
 export default class Nav extends Component {
   render() {

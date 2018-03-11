@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Container, Header, Text, Image, GreetingsIconContainer, GreetingsIcon, GreetingsText } from '../../style/greetings-style';
+import { Container, Header, Text, Image, GreetingsIconContainer, GreetingsIcon, GreetingsText } from './greetings-style';
 
 export default class Greetings extends Component {
   render() {
