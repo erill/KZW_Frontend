@@ -6,17 +6,19 @@ import Nav from './Navigation/nav';
 import TrainingMetamorphosis from './Training/training';
 import Carousel from './Carousel/carousel';
 import GalleryBox from './Gallery/gallery';
+import Footer from './Footer/footer';
 
 export default class App extends Component {
   render() {
     return (
       <div>
-        <Nav />
+        {/* <Nav />
         <Carousel />
         <AboutProject />
         <TrainingMetamorphosis />
         <Greetings />
-        <GalleryBox />
+        <GalleryBox /> */}
+        <Footer />
       </div>
     );
   }
