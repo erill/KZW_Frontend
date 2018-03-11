@@ -1,3 +1,7 @@
+.slick-slider {
+  margin-top: 57px;
+}
+
 .slick-prev, .slick-next {
   z-index: 2;
 }
