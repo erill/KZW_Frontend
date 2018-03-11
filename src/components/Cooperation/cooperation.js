@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import Description from './description';
-import TextHeader from './text_header';
+import Description from '../Description/description';
+import TextHeader from '../TextHeader/text_header';
 
 export default class AboutProject extends Component {
   render() {

@@ -53,11 +53,6 @@ export const ListItem = styled.li`
   padding: 2px 0;
 `;
 
-export const Link = styled.a`
-  color: #000;
-  text-decoration: none;
-`;
-
 export const Title = styled.h4`
   text-transform: uppercase;
   font-size: 19px;

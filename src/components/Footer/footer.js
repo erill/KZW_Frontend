@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Footer, FlexboxWrapper, Item, Title, List, ListItem, Link, ItemContent, Image } from './footer-styles';
+import { Link } from 'react-router-dom';
+import { Footer, FlexboxWrapper, Item, Title, List, ListItem, ItemContent, Image } from './footer-styles';
 
 
 export default class FooterClass extends Component {
@@ -10,12 +11,12 @@ export default class FooterClass extends Component {
           <Item>
             <Title>Menu</Title>
             <List>
-              <ListItem><Link href="#">Strona główna</Link></ListItem>
-              <ListItem><Link href="#">O projekcie</Link></ListItem>
-              <ListItem><Link href="#">Współpraca</Link></ListItem>
-              <ListItem><Link href="#">Zapisy</Link></ListItem>
-              <ListItem><Link href="#">Galeria</Link></ListItem>
-              <ListItem><Link href="#">Kontakt</Link></ListItem>
+              <ListItem><Link to="/" className="link">Strona główna</Link></ListItem>
+              <ListItem><Link to="/o-projekcie" className="link">O projekcie</Link></ListItem>
+              <ListItem><Link to="/wspolpraca" className="link">Współpraca</Link></ListItem>
+              <ListItem><Link to="#" className="link">Zapisy</Link></ListItem>
+              <ListItem><Link to="/galeria" className="link">Galeria</Link></ListItem>
+              <ListItem><Link to="#" className="link">Kontakt</Link></ListItem>
             </List>
           </Item>
           <Item>

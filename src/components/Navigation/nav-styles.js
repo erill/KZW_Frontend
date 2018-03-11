@@ -35,9 +35,8 @@ export const MenuContainer = styled.div`
   box-shadow: 0px 1px 1px #D28479;
 `;
 
-export const MenuItem = styled.a`
+export const MenuItem = styled.div`
   color: #605E5E;
-  text-decoration: none;
   padding: ${props => props.lastElement ? '10px 30px 10px 10px' : '10px' };
   font-size: ${props => props.hamburger ? '16px' : '14px' };
   font-family: ${props => props.hamburger ? 'RalewayBold' : 'RalewayRegular' };

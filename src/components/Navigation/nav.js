@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import Media from "react-media";
 import { slide as Menu } from 'react-burger-menu';
 import { Container, Image, MenuContainer, MenuItem } from './nav-styles';
@@ -54,26 +55,26 @@ export default class Nav extends Component {
             <MenuContainer>
               <Image src="../../../../img/logo.png" alt="Logo" />
                <Menu styles={ styles } width={ '250px' }>
-                <MenuItem href="/" hamburger>Strona główna</MenuItem>
-                <MenuItem href="/" hamburger>O projekcie</MenuItem>
-                <MenuItem href="/" hamburger>Współpraca</MenuItem>
-                <MenuItem href="/" hamburger>Zapisy</MenuItem>
-                <MenuItem href="/" hamburger>Galeria</MenuItem>
-                <MenuItem href="/" hamburger>Kontakt</MenuItem>
-                <MenuItem href="/" hamburger>Logowanie</MenuItem>
-                <MenuItem href="/" hamburger>Rejestracja</MenuItem>
+                <MenuItem hamburger><Link to="/" className="link">Strona główna</Link></MenuItem>
+                <MenuItem hamburger><Link to="/o-projekcie" className="link">O projekcie</Link></MenuItem>
+                <MenuItem hamburger><Link to="/wspolpraca" className="link">Współpraca</Link></MenuItem>
+                <MenuItem hamburger><Link to="/" className="link">Zapisy</Link></MenuItem>
+                <MenuItem hamburger><Link to="/galeria" className="link">Galeria</Link></MenuItem>
+                <MenuItem hamburger><Link to="/" className="link">Kontakt</Link></MenuItem>
+                <MenuItem hamburger><Link to="/" className="link">Logowanie</Link></MenuItem>
+                <MenuItem hamburger><Link to="/" className="link">Rejestracja</Link></MenuItem>
               </Menu>
             </MenuContainer>
           ) : (
             <Container>
-              <MenuItem href="/">Strona główna</MenuItem>
-              <MenuItem href="/">O projekcie</MenuItem>
-              <MenuItem href="/">Współpraca</MenuItem>
-              <MenuItem href="/">Zapisy</MenuItem>
-              <MenuItem href="/">Galeria</MenuItem>
-              <MenuItem href="/">Kontakt</MenuItem>
-              <MenuItem href="/">Logowanie</MenuItem>
-              <MenuItem href="/" lastElement >Rejestracja</MenuItem>
+              <MenuItem><Link to="/" className="link">Strona główna</Link></MenuItem>
+              <MenuItem><Link to="/o-projekcie" className="link">O projekcie</Link></MenuItem>
+              <MenuItem><Link to="/wspolpraca" className="link">Współpraca</Link></MenuItem>
+              <MenuItem><Link to="/" className="link">Zapisy</Link></MenuItem>
+              <MenuItem><Link to="/galeria" className="link">Galeria</Link></MenuItem>
+              <MenuItem><Link to="/" className="link">Kontakt</Link></MenuItem>
+              <MenuItem><Link to="/" className="link">Logowanie</Link></MenuItem>
+              <MenuItem lastElement><Link to="/" className="link">Rejestracja</Link></MenuItem>
             </Container>
           )
         }
