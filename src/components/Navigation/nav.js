@@ -1,20 +1,21 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import Media from "react-media";
 import { slide as Menu } from 'react-burger-menu';
-import { Container, MenuItem } from './nav-styles';
+import { Container, Image, MenuContainer, MenuItem } from './nav-styles';
 
 export default class Nav extends Component {
   render() {
     var styles = {
       bmBurgerButton: {
         position: 'fixed',
-        width: '36px',
-        height: '30px',
-        left: '36px',
-        top: '36px'
+        width: '24px',
+        height: '20px',
+        right: '24px',
+        top: '24px'
       },
       bmBurgerBars: {
-        background: '#373a47',
+        background: '#91414D',
         transition: 'all .5s'
       },
       bmCrossButton: {
@@ -26,9 +27,13 @@ export default class Nav extends Component {
       },
       bmMenu: {
         background: '#373A47',
+        background: '#E8E8E8',
         padding: '2.5em 1.5em 0',
         fontSize: '1.15em',
         overflow: 'none'
+      },
+      bmMenuWrap: {
+        top: 0
       },
       bmMorphShape: {
         fill: '#373A47'
@@ -38,30 +43,38 @@ export default class Nav extends Component {
         padding: '0.8em'
       },
       bmOverlay: {
-        background: 'rgba(0, 0, 0, 0.3)'
+        background: 'rgba(0, 0, 0, 0.3)',
+        top: '0'
       }
     }
 
     return (
-      <Media query="(max-width: 966px)">
+      <Media query="(max-width: 767px)">
         {matches =>
           matches ? (
-            <Menu styles={ styles } width={ '250px' }>
-              <MenuItem href="/" hamburger>Strona główna</MenuItem>
-              <MenuItem href="/" hamburger>O projekcie</MenuItem>
-              <MenuItem href="/" hamburger>Współpraca</MenuItem>
-              <MenuItem href="/" hamburger>Zapisy</MenuItem>
-              <MenuItem href="/" hamburger>Galeria</MenuItem>
-              <MenuItem href="/" hamburger>Kontakt</MenuItem>
-            </Menu>
+            <MenuContainer>
+              <Image src="../../../../img/logo.png" alt="Logo" />
+               <Menu styles={ styles } width={ '250px' }>
+                <MenuItem hamburger><Link to="/" className="link">Strona główna</Link></MenuItem>
+                <MenuItem hamburger><Link to="/o-projekcie" className="link">O projekcie</Link></MenuItem>
+                <MenuItem hamburger><Link to="/wspolpraca" className="link">Współpraca</Link></MenuItem>
+                <MenuItem hamburger><Link to="/" className="link">Zapisy</Link></MenuItem>
+                <MenuItem hamburger><Link to="/galeria" className="link">Galeria</Link></MenuItem>
+                <MenuItem hamburger><Link to="/" className="link">Kontakt</Link></MenuItem>
+                <MenuItem hamburger><Link to="/" className="link">Logowanie</Link></MenuItem>
+                <MenuItem hamburger><Link to="/" className="link">Rejestracja</Link></MenuItem>
+              </Menu>
+            </MenuContainer>
           ) : (
             <Container>
-              <MenuItem href="/">Strona główna</MenuItem>
-              <MenuItem href="/">O projekcie</MenuItem>
-              <MenuItem href="/">Współpraca</MenuItem>
-              <MenuItem href="/">Zapisy</MenuItem>
-              <MenuItem href="/">Galeria</MenuItem>
-              <MenuItem href="/">Kontakt</MenuItem>
+              <MenuItem><Link to="/" className="link">Strona główna</Link></MenuItem>
+              <MenuItem><Link to="/o-projekcie" className="link">O projekcie</Link></MenuItem>
+              <MenuItem><Link to="/wspolpraca" className="link">Współpraca</Link></MenuItem>
+              <MenuItem><Link to="/" className="link">Zapisy</Link></MenuItem>
+              <MenuItem><Link to="/galeria" className="link">Galeria</Link></MenuItem>
+              <MenuItem><Link to="/" className="link">Kontakt</Link></MenuItem>
+              <MenuItem><Link to="/" className="link">Logowanie</Link></MenuItem>
+              <MenuItem lastElement><Link to="/" className="link">Rejestracja</Link></MenuItem>
             </Container>
           )
         }

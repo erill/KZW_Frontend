@@ -1,3 +1,7 @@
+.slick-slider {
+  margin-top: 57px;
+}
+
 .slick-prev, .slick-next {
   z-index: 2;
 }
@@ -12,6 +16,14 @@
 
 .slick-dots {
   bottom: 2%;
+}
+
+.slick-dots li button:before {
+  width: 10px;
+  height: 10px;
+  line-height: 10px;
+  border-radius: 50%;
+  background-color: black;
 }
 
 .slick-dots li button:focus, .slick-dots li button:hover {
