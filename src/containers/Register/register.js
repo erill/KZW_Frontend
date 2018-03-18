@@ -1,8 +1,9 @@
 import React, {Component} from 'react';
 import { Field, reduxForm } from 'redux-form';
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { register } from '../../actions';
-import { ContainerTest, Container, FieldContainer, Header, Form, Label, Input, Button, LoginLink } from './register-styles';
+import { Container, BoxContainer, FieldContainer, Header, Form, Label, Input, Button, LoginLink } from './register-styles';
 
 class Register extends Component {
   renderField(field) {
@@ -26,8 +27,8 @@ class Register extends Component {
     const { handleSubmit } = this.props;
 
     return (
-      <ContainerTest>
-        <Container>
+      <Container>
+        <BoxContainer>
           <Header>Rejestracja</Header>
           <p>{this.props.registerData}</p>
           <Form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
@@ -74,10 +75,12 @@ class Register extends Component {
               component={this.renderField}
             />
             <Button type="submit">Zarejestruj</Button>
-            <LoginLink>Logowanie</LoginLink>
+            <LoginLink>
+              <Link to="/logowanie">Logowanie</Link>
+            </LoginLink>
           </Form>
-        </Container>
-      </ContainerTest>
+        </BoxContainer>
+      </Container>
     );
   }
 }

@@ -1,15 +1,12 @@
 import styled from 'styled-components';
 
-export const ContainerTest = styled.div`
-  width: 100%;
-  height: 100vh;
-  padding: 5% 0;
-  display: block;
+export const Container = styled.div`
+  padding: 10% 0;
   text-align: center;
   background-color: #F6F6F6;
 `;
 
-export const Container = styled.div`
+export const BoxContainer = styled.div`
   width: 20%;
   margin: 0 auto;
   padding: 25px 40px;

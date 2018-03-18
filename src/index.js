@@ -6,11 +6,12 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import reducers from './reducers';
 import ReduxPromise from 'redux-promise';
 import Nav from './components/Navigation/nav';
-import Carousel from './components/Carousel/carousel';
 import Homepage from './components/Homepage/Homepage';
 import AboutProject from './components/AboutProject/about_project';
 import Cooperation from './components/Cooperation/cooperation';
 import Gallery from './components/Gallery/gallery';
+import Login from './containers/Login/login';
+import Register from './containers/Register/register';
 import Footer from './components/Footer/footer';
 
 const createStoreWithMiddleware = applyMiddleware(ReduxPromise)(createStore);
@@ -20,11 +21,12 @@ ReactDOM.render(
     <BrowserRouter>
       <div>
         <Nav />
-        <Carousel />
         <Switch>
           <Route path="/o-projekcie" component={ AboutProject } />
           <Route path="/wspolpraca" component={ Cooperation } />
           <Route path="/galeria" component={ Gallery } />
+          <Route path="/logowanie" component={ Login } />
+          <Route path="/rejestracja" component={ Register } />
           <Route path="/" component={ Homepage } />
         </Switch>
         <Footer />

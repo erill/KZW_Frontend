@@ -1,19 +1,25 @@
 import React, {Component} from 'react';
 import { Field, reduxForm } from 'redux-form';
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { login } from '../../actions';
-import { ContainerTest, Container, FieldContainer, Header, Form, Label, Input, Button, RegisterLink } from './login-styles';
+import { Container, BoxContainer, FieldContainer, ErrorText, Header, Form, Label, Input, Button, RegisterLink } from './login-styles';
 
 class Login extends Component {
   renderField(field) {
+    const textError = `${field.meta.touched && field.meta.error ? 'error' : ''}`;
+
     return (
       <FieldContainer>
         <Label>{field.label}</Label>
         <Input
+          error = {textError}
           type={field.type}
           {...field.input}
         />
-        {field.meta.touched ? field.meta.error : ''}
+        <ErrorText>
+          {field.meta.touched ? field.meta.error : ''}
+        </ErrorText>
       </FieldContainer>
     );
   }
@@ -24,12 +30,22 @@ class Login extends Component {
 
   render() {
     const { handleSubmit } = this.props;
+    let loginFailed = '';
+
+    if (this.props.loginData) {
+      if (!this.props.loginData.token) {
+        loginFailed = 'Niepoprawne dane logowania';
+      } else {
+        loginFailed = '';
+      }
+    }
 
     return (
-      <ContainerTest>
-        <Container>
+      <Container>
+        <BoxContainer>
           <Header>Logowanie</Header>
-          <p>{this.props.loginData}</p>
+          <p>{loginFailed}</p>
+          {console.log(this.props.loginData)}
           <Form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
             <Field
               label="E-mail"
@@ -44,10 +60,12 @@ class Login extends Component {
               component={this.renderField}
             />
             <Button type="submit">Zaloguj</Button>
-            <RegisterLink>Rejestracja</RegisterLink>
+            <RegisterLink>
+              <Link to="/rejestracja">Rejestracja</Link>
+            </RegisterLink>
           </Form>
-        </Container>
-      </ContainerTest>
+        </BoxContainer>
+      </Container>
     );
   }
 }

@@ -1,15 +1,12 @@
 import styled from 'styled-components';
 
-export const ContainerTest = styled.div`
-  width: 100%;
-  height: 60vh;
-  padding: 5% 0;
-  display: block;
+export const Container = styled.div`
+  padding: 10% 0;
   text-align: center;
   background-color: #F6F6F6;
 `;
 
-export const Container = styled.div`
+export const BoxContainer = styled.div`
   width: 15%;
   margin: 0 auto;
   padding: 25px 40px;
@@ -26,6 +23,16 @@ export const Container = styled.div`
 
 export const FieldContainer = styled.div`
   text-align: left;
+`;
+
+export const ErrorText = styled.p`
+  display: block;
+  color: #222222;
+  margin: 10px 0 30px;
+  font-size: 32px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  font-family: 'RalewayRegular', sans-serif;
 `;
 
 export const Header = styled.h1`
@@ -56,6 +63,7 @@ export const Input = styled.input`
   width: 100%;
   display: block;
   border: 3px solid #E1E1E1;
+  border-color: ${props => props.error ? '#AE4E5D' : '#E1E1E1' };
   padding: 6px 0;
 `;
 

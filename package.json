@@ -37,6 +37,7 @@
     "react-redux": "4.3.0",
     "react-responsive-carousel": "^3.1.33",
     "react-router": "^2.0.1",
+    "react-router-dom": "^4.0.0",
     "react-slick": "^0.18.0",
     "redux": "^3.0.4",
     "redux-form": "^6.6.3",
