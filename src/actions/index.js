@@ -5,7 +5,7 @@ export const REGISTER = 'register';
 
 const ROOT_URL = 'http://localhost:3000/api';
 
-export function logIn(values) {
+export function login(values) {
   const request = axios.post(`${ROOT_URL}/login`, values);
 
   return {

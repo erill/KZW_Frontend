@@ -1,51 +1,53 @@
 import React, {Component} from 'react';
 import { Field, reduxForm } from 'redux-form';
 import { connect } from 'react-redux';
-import { logIn } from '../../actions';
-import { Container, Header } from './login-styles';
+import { login } from '../../actions';
+import { ContainerTest, Container, FieldContainer, Header, Form, Label, Input, Button, RegisterLink } from './login-styles';
 
 class Login extends Component {
   renderField(field) {
     return (
-      <div>
-        <label>{field.label}</label>
-        <input
+      <FieldContainer>
+        <Label>{field.label}</Label>
+        <Input
           type={field.type}
           {...field.input}
         />
         {field.meta.touched ? field.meta.error : ''}
-      </div>
+      </FieldContainer>
     );
   }
 
   onSubmit(values) {
-    console.log(values);
-    this.props.logIn(values);
+    this.props.login(values);
   }
 
   render() {
     const { handleSubmit } = this.props;
 
     return (
-      <Container>
-        <Header>Logowanie</Header>
-        <p>{this.props.login}</p>
-        <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
-          <Field
-            label="Email"
-            type="email"
-            name="email"
-            component={this.renderField}
-          />
-          <Field
-            label="Hasło"
-            type="password"
-            name="password"
-            component={this.renderField}
-          />
-          <button type="submit">Zaloguj się</button>
-        </form>
-      </Container>
+      <ContainerTest>
+        <Container>
+          <Header>Logowanie</Header>
+          <p>{this.props.loginData}</p>
+          <Form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
+            <Field
+              label="E-mail"
+              type="email"
+              name="email"
+              component={this.renderField}
+            />
+            <Field
+              label="Hasło"
+              type="password"
+              name="password"
+              component={this.renderField}
+            />
+            <Button type="submit">Zaloguj</Button>
+            <RegisterLink>Rejestracja</RegisterLink>
+          </Form>
+        </Container>
+      </ContainerTest>
     );
   }
 }
@@ -64,13 +66,13 @@ function validate(values) {
   return errors;
 }
 
-function mapStateToProps({ login }) {
-  return { login };
+function mapStateToProps({ loginData }) {
+  return { loginData };
 }
 
 export default reduxForm({
   validate,
   form: 'LoginForm'
 })(
-  connect(mapStateToProps, { logIn })(Login)
+  connect(mapStateToProps, { login })(Login)
 );
