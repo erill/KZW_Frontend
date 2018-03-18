@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  margin: 0 14%;
+  margin: 0 10%;
   padding: 20px 0;
   background-color: #FCFCFC;
   font-family: 'RalewayRegular', sans-serif;
