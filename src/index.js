@@ -13,6 +13,7 @@ import AboutProject from './components/AboutProject/about_project';
 import Cooperation from './components/Cooperation/cooperation';
 import Gallery from './components/Gallery/gallery';
 import Footer from './components/Footer/footer';
+import EventsList from './containers/EventsList/events-list';
 
 const createStoreWithMiddleware = applyMiddleware(ReduxPromise)(createStore);
 
@@ -21,8 +22,9 @@ ReactDOM.render(
     <BrowserRouter>
       <div>
         <Nav />
-        <Carousel />
+        {/* <Carousel /> */}
         <Switch>
+          <Route path="/wydarzenia" component={ EventsList } />
           <Route path="/o-projekcie" component={ AboutProject } />
           <Route path="/wspolpraca" component={ Cooperation } />
           <Route path="/galeria" component={ Gallery } />

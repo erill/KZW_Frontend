@@ -14,7 +14,7 @@ export default class FooterClass extends Component {
               <ListItem><Link to="/" className="link">Strona główna</Link></ListItem>
               <ListItem><Link to="/o-projekcie" className="link">O projekcie</Link></ListItem>
               <ListItem><Link to="/wspolpraca" className="link">Współpraca</Link></ListItem>
-              <ListItem><Link to="#" className="link">Zapisy</Link></ListItem>
+              <ListItem><Link to="wydarzenia" className="link">Zapisy</Link></ListItem>
               <ListItem><Link to="/galeria" className="link">Galeria</Link></ListItem>
               <ListItem><Link to="#" className="link">Kontakt</Link></ListItem>
             </List>
