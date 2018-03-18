@@ -23,7 +23,7 @@
     "mocha": "^2.4.5",
     "react-addons-test-utils": "^0.14.7",
     "webpack": "^1.12.9",
-    "webpack-dev-server": "^1.14.0"
+    "webpack-dev-server": "^1.16.5"
   },
   "dependencies": {
     "axios": "^0.18.0",
@@ -37,6 +37,7 @@
     "react-redux": "4.3.0",
     "react-responsive-carousel": "^3.1.33",
     "react-router": "^2.0.1",
+    "react-router-dom": "^4.0.0",
     "react-slick": "^0.18.0",
     "react-tooltip": "^3.4.0",
     "redux": "^3.0.4",

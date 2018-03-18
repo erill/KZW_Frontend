@@ -11,6 +11,8 @@ import Homepage from './components/Homepage/Homepage';
 import AboutProject from './components/AboutProject/about_project';
 import Cooperation from './components/Cooperation/cooperation';
 import Gallery from './components/Gallery/gallery';
+import Login from './containers/Login/login';
+import Register from './containers/Register/register';
 import Footer from './components/Footer/footer';
 import EventsList from './containers/EventsList/events-list';
 
@@ -26,6 +28,8 @@ ReactDOM.render(
           <Route path="/o-projekcie" component={ AboutProject } />
           <Route path="/wspolpraca" component={ Cooperation } />
           <Route path="/galeria" component={ Gallery } />
+          <Route path="/logowanie" component={ Login } />
+          <Route path="/rejestracja" component={ Register } />
           <Route path="/" component={ Homepage } />
         </Switch>
         <Footer />

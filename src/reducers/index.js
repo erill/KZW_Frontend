@@ -6,7 +6,9 @@ import EventsReducer from './reducer_events';
 const rootReducer = combineReducers({
   form: formReducer,
   token: LoginReducer,
-  events: EventsReducer
+  events: EventsReducer,
+  loginData: LoginReducer,
+  registerData: RegisterReducer
 });
 
 export default rootReducer;

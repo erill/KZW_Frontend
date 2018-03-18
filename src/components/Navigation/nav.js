@@ -61,8 +61,8 @@ export default class Nav extends Component {
                 <MenuItem hamburger><Link to="/wydarzenia" className="link">Zapisy</Link></MenuItem>
                 <MenuItem hamburger><Link to="/galeria" className="link">Galeria</Link></MenuItem>
                 <MenuItem hamburger><Link to="/" className="link">Kontakt</Link></MenuItem>
-                <MenuItem hamburger><Link to="/" className="link">Logowanie</Link></MenuItem>
-                <MenuItem hamburger><Link to="/" className="link">Rejestracja</Link></MenuItem>
+                <MenuItem hamburger><Link to="/logowanie" className="link">Logowanie</Link></MenuItem>
+                <MenuItem hamburger><Link to="/rejestracja" className="link">Rejestracja</Link></MenuItem>
               </Menu>
             </MenuContainer>
           ) : (
@@ -73,8 +73,8 @@ export default class Nav extends Component {
               <MenuItem><Link to="/wydarzenia" className="link">Zapisy</Link></MenuItem>
               <MenuItem><Link to="/galeria" className="link">Galeria</Link></MenuItem>
               <MenuItem><Link to="/" className="link">Kontakt</Link></MenuItem>
-              <MenuItem><Link to="/" className="link">Logowanie</Link></MenuItem>
-              <MenuItem lastElement><Link to="/" className="link">Rejestracja</Link></MenuItem>
+              <MenuItem><Link to="/logowanie" className="link">Logowanie</Link></MenuItem>
+              <MenuItem lastElement><Link to="/rejestracja" className="link">Rejestracja</Link></MenuItem>
             </Container>
           )
         }

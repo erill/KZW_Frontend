@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+import Carousel from '../Carousel/carousel';
 import Greetings from '../Greetings/greetings';
 import TrainingMetamorphosis from '../Training/training';
 import Team from '../Team/team';
