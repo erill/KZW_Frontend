@@ -1,15 +1,18 @@
 import React, { Component } from 'react';
 
-
+import Carousel from '..//Carousel/carousel';
 import Description from '../Description/description';
 import TextHeader from '../TextHeader/text_header';
 import Tile from '../Tile/tile';
+
 import { Container } from '../Tile/tiles-style';
+
 
 export default class AboutProject extends Component {
   render() {
     return (
       <div>
+        <Carousel />
         <TextHeader
           header="O projekcie"
           text="Stowarzyszenie Studenckie WIGGOR co roku tworzy projekt „Kobieta z Wiggorem”. Jest to cykl wydarzeń, organizowanych z myślą o wrocławskich studentkach. Już od 19 lat staramy się układać nasze warsztaty tak, aby każda uczestniczka znalazła coś dla siebie."

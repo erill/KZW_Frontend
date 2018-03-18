@@ -1,11 +1,15 @@
 import React, { Component } from 'react';
+
+import Carousel from '..//Carousel/carousel';
 import Description from '../Description/description';
 import TextHeader from '../TextHeader/text_header';
+
 
 export default class AboutProject extends Component {
   render() {
     return (
       <div>
+        <Carousel />
         <TextHeader
           header="Współpraca"
           text="Kobieta z Wiggorem to cykl wydarzeń organizowany dla studentek. Naszym celem jest zachęcenie młodych kobiet do rozwijania swoich pasji oraz poznawania nowych doświadczeń."

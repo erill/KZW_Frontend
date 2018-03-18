@@ -7,7 +7,6 @@ import reducers from './reducers';
 import ReduxPromise from 'redux-promise';
 
 import Nav from './components/Navigation/nav';
-import Carousel from './components/Carousel/carousel';
 import Homepage from './components/Homepage/Homepage';
 import AboutProject from './components/AboutProject/about_project';
 import Cooperation from './components/Cooperation/cooperation';
@@ -22,7 +21,6 @@ ReactDOM.render(
     <BrowserRouter>
       <div>
         <Nav />
-        {/* <Carousel /> */}
         <Switch>
           <Route path="/wydarzenia" component={ EventsList } />
           <Route path="/o-projekcie" component={ AboutProject } />
