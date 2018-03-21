@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+
 import Media from "react-media";
 import { slide as Menu } from 'react-burger-menu';
 import { Container, Image, MenuContainer, MenuItem } from './nav-styles';
 
-export default class Nav extends Component {
+
+class Nav extends Component {
   render() {
     var styles = {
       bmBurgerButton: {
@@ -48,6 +51,32 @@ export default class Nav extends Component {
       }
     }
 
+    let isLoggedIn = this.props.loginData.hasOwnProperty('token');
+
+    let userLoggedIn = isLoggedIn ? (
+      <MenuItem><Link to="/" className="link">Wyloguj</Link></MenuItem>
+    ) : (
+      <MenuItem><Link to="/logowanie" className="link">Logowanie</Link></MenuItem>
+    );
+
+    let userLoggedInHamburger = isLoggedIn ? (
+      <MenuItem hamburger><Link to="/" className="link">Wyloguj</Link></MenuItem>
+    ) : (
+      <MenuItem hamburger><Link to="/logowanie" className="link">Logowanie</Link></MenuItem>
+    );
+
+    let userPanel = isLoggedIn ? (
+      <MenuItem><Link to="/" className="link">Profil</Link></MenuItem>
+    ) : (
+      <MenuItem><Link to="/rejestracja" className="link">Rejestracja</Link></MenuItem>
+    );
+
+    let userPanelHamburger = isLoggedIn ? (
+      <MenuItem hamburger><Link to="/" className="link">Profil</Link></MenuItem>
+    ) : (
+      <MenuItem hamburger><Link to="/rejestracja" className="link">Rejestracja</Link></MenuItem>
+    );
+
     return (
       <Media query="(max-width: 767px)">
         {matches =>
@@ -61,8 +90,8 @@ export default class Nav extends Component {
                 <MenuItem hamburger><Link to="/wydarzenia" className="link">Zapisy</Link></MenuItem>
                 <MenuItem hamburger><Link to="/galeria" className="link">Galeria</Link></MenuItem>
                 <MenuItem hamburger><Link to="/" className="link">Kontakt</Link></MenuItem>
-                <MenuItem hamburger><Link to="/logowanie" className="link">Logowanie</Link></MenuItem>
-                <MenuItem hamburger><Link to="/rejestracja" className="link">Rejestracja</Link></MenuItem>
+                {userLoggedIn}
+                {userPanel}
               </Menu>
             </MenuContainer>
           ) : (
@@ -73,8 +102,8 @@ export default class Nav extends Component {
               <MenuItem><Link to="/wydarzenia" className="link">Zapisy</Link></MenuItem>
               <MenuItem><Link to="/galeria" className="link">Galeria</Link></MenuItem>
               <MenuItem><Link to="/" className="link">Kontakt</Link></MenuItem>
-              <MenuItem><Link to="/logowanie" className="link">Logowanie</Link></MenuItem>
-              <MenuItem lastElement><Link to="/rejestracja" className="link">Rejestracja</Link></MenuItem>
+              {userLoggedIn}
+              {userPanel}
             </Container>
           )
         }
@@ -82,3 +111,9 @@ export default class Nav extends Component {
     );
   }
 }
+
+function mapStateToProps({ loginData }) {
+  return { loginData };
+}
+
+export default connect(mapStateToProps)(Nav);

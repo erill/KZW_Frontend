@@ -25,7 +25,12 @@ export const FieldContainer = styled.div`
   text-align: left;
 `;
 
-export const ErrorText = styled.p`
+export const LabelContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+`;
+
+export const Header = styled.h1`
   display: block;
   color: #222222;
   margin: 10px 0 30px;
@@ -35,11 +40,10 @@ export const ErrorText = styled.p`
   font-family: 'RalewayRegular', sans-serif;
 `;
 
-export const Header = styled.h1`
-  display: block;
-  color: #222222;
-  margin: 10px 0 30px;
-  font-size: 32px;
+export const ErrorText = styled.p`
+  margin: 15px 0 10px;
+  color: #AE4E5D;
+  font-size: 14px;
   font-weight: 400;
   letter-spacing: 1px;
   font-family: 'RalewayRegular', sans-serif;
@@ -63,8 +67,8 @@ export const Input = styled.input`
   width: 100%;
   display: block;
   border: 3px solid #E1E1E1;
-  border-color: ${props => props.error ? '#AE4E5D' : '#E1E1E1' };
-  padding: 6px 0;
+  padding: 6px 0 6px 10px;
+  font-size: 14px;
 `;
 
 export const Button = styled.button`
