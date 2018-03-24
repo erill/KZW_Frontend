@@ -1,25 +1,38 @@
 import React, {Component} from 'react';
-import { Field, reduxForm } from 'redux-form';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
+import { Field, reduxForm } from 'redux-form';
+
 import { login } from '../../actions';
-import { Container, BoxContainer, FieldContainer, ErrorText, Header, Form, Label, Input, Button, RegisterLink } from './login-styles';
+import { Container, BoxContainer, FieldContainer, LabelContainer, Header, Form, ErrorText, Label, Input, Button, RegisterLink } from './login-styles';
+
 
 class Login extends Component {
+  componentDidMount() {
+    if (this.props.loginData.hasOwnProperty('token')) {
+      this.props.history.push('/');
+    }
+  }
+
+  componentDidUpdate() {
+    if (this.props.loginData.hasOwnProperty('token')) {
+      this.props.history.push('/');
+    }
+  }
+
   renderField(field) {
-    const textError = `${field.meta.touched && field.meta.error ? 'error' : ''}`;
+    const textError = `${field.meta.touched && field.meta.error ? field.meta.error : ''}`;
 
     return (
       <FieldContainer>
-        <Label>{field.label}</Label>
+        <LabelContainer>
+          <Label>{field.label}</Label>
+          <ErrorText>{textError}</ErrorText>
+        </LabelContainer>
         <Input
-          error = {textError}
           type={field.type}
           {...field.input}
         />
-        <ErrorText>
-          {field.meta.touched ? field.meta.error : ''}
-        </ErrorText>
       </FieldContainer>
     );
   }
@@ -32,24 +45,21 @@ class Login extends Component {
     const { handleSubmit } = this.props;
     let loginFailed = '';
 
+    let isLoggedIn = this.props.loginData.hasOwnProperty('token');
+
     if (this.props.loginData) {
-      if (!this.props.loginData.token) {
-        loginFailed = 'Niepoprawne dane logowania';
-      } else {
-        loginFailed = '';
-      }
+      loginFailed = this.props.loginData.message ? 'Niepoprawne dane logowania' : '';
     }
 
     return (
       <Container>
         <BoxContainer>
           <Header>Logowanie</Header>
-          <p>{loginFailed}</p>
-          {console.log(this.props.loginData)}
+          <ErrorText>{loginFailed}</ErrorText>
           <Form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
             <Field
               label="E-mail"
-              type="email"
+              type="text"
               name="email"
               component={this.renderField}
             />
@@ -61,7 +71,7 @@ class Login extends Component {
             />
             <Button type="submit">Zaloguj</Button>
             <RegisterLink>
-              <Link to="/rejestracja">Rejestracja</Link>
+              <Link to="/rejestracja" className="callback-link">Rejestracja</Link>
             </RegisterLink>
           </Form>
         </BoxContainer>
@@ -75,6 +85,14 @@ function validate(values) {
 
   if (!values.email) {
     errors.email = "Wprowadź email";
+  }
+
+  if (values.email) {
+    let regex = /^[^\s]*[0-9a-zA-ZąćęłńóśźżĄĆĘŁŃÓŚŹŻ]+@{1}[0-9a-zA-ZąćęłńóśźżĄĆĘŁŃÓŚŹŻ]+\.[0-9a-zA-ZąćęłńóśźżĄĆĘŁŃÓŚŹŻ]{1}[.0-9a-zA-ZąćęłńóśźżĄĆĘŁŃÓŚŹŻ]+[^\s]*$/,
+        text = values.email;
+    if (!text.match(regex)) {
+      errors.email = "Wprowadź poprawny email";
+    }
   }
 
   if (!values.password) {

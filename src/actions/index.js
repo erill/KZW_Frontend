@@ -8,11 +8,11 @@ export const USER_EVENTS = 'user_events';
 const ROOT_URL = 'http://localhost:3000/api';
 
 export function login(values) {
-  const request = axios.post(`${ROOT_URL}/login`, values);
+  const loginRequest = axios.post(`${ROOT_URL}/login`, values);
 
   return {
     type: LOG_IN,
-    payload: request
+    payload: loginRequest
   };
 }
 
