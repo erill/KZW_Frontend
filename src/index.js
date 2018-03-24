@@ -14,7 +14,8 @@ import Gallery from './components/Gallery/gallery';
 import Login from './containers/Login/login';
 import Register from './containers/Register/register';
 import Footer from './components/Footer/footer';
-import EventsList from './containers/EventsList/events-list';
+import EventsList from './containers/EventsList/AllEventsList/events-list';
+import UserEventsList from './containers/EventsList/UserEventsList/user-events-list';
 
 const createStoreWithMiddleware = applyMiddleware(ReduxPromise)(createStore);
 
@@ -25,6 +26,7 @@ ReactDOM.render(
         <Nav />
         <Switch>
           <Route path="/wydarzenia" component={ EventsList } />
+          <Route path="/profil" component={ UserEventsList } />
           <Route path="/o-projekcie" component={ AboutProject } />
           <Route path="/wspolpraca" component={ Cooperation } />
           <Route path="/galeria" component={ Gallery } />
