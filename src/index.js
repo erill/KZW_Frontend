@@ -11,6 +11,7 @@ import Homepage from './components/Homepage/Homepage';
 import AboutProject from './components/AboutProject/about_project';
 import Cooperation from './components/Cooperation/cooperation';
 import Gallery from './components/Gallery/gallery';
+import Contact from './components/Contact/contact';
 import Login from './containers/Login/login';
 import Register from './containers/Register/register';
 import Footer from './components/Footer/footer';
@@ -32,6 +33,7 @@ ReactDOM.render(
           <Route path="/galeria" component={ Gallery } />
           <Route path="/logowanie" component={ Login } />
           <Route path="/rejestracja" component={ Register } />
+          <Route path="/kontakt" component={ Contact } />
           <Route path="/" component={ Homepage } />
         </Switch>
         <Footer />

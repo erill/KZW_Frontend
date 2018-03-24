@@ -7,6 +7,7 @@ export const Section = styled.div`
   text-align: center;
   padding: 20px;
 `;
+
 export const HeadSmall = styled.h4`
   font-weight: 400;
   font-family: 'Arial','Helvetica',sans-serif;
