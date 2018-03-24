@@ -25,6 +25,11 @@ export const FieldContainer = styled.div`
   text-align: left;
 `;
 
+export const LabelContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+`;
+
 export const Header = styled.h1`
   display: block;
   color: #222222;
@@ -35,12 +40,20 @@ export const Header = styled.h1`
   font-family: 'RalewayRegular', sans-serif;
 `;
 
+export const ErrorText = styled.p`
+  margin: 15px 0 10px;
+  color: #AE4E5D;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  font-family: 'RalewayRegular', sans-serif;
+`;
+
 export const Form = styled.form`
   text-align: center;
 `;
 
 export const Label = styled.label`
-  display: block;
   color: #222222;
   margin: 15px 0 10px;
   font-size: 20px;
@@ -53,7 +66,8 @@ export const Input = styled.input`
   width: 100%;
   display: block;
   border: 3px solid #E1E1E1;
-  padding: 6px 0;
+  padding: 6px 0 6px 10px;
+  font-size: 14px;
 `;
 
 export const Button = styled.button`
@@ -85,4 +99,16 @@ export const LoginLink = styled.h3`
   cursor: pointer;
   letter-spacing: 1px;
   font-family: 'RalewayRegular', sans-serif;
+`;
+
+export const TermsOfUse = styled.p`
+  color: #222222;
+  font-size: 14px;
+  letter-spacing: 1px;
+  font-family: 'RalewayRegular', sans-serif;
+`;
+
+export const TermsOfUseButton = styled.span`
+  color: #AE4E5D;
+  cursor: pointer;
 `;

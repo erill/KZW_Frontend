@@ -1,36 +1,73 @@
 import React, {Component} from 'react';
-import { Field, reduxForm } from 'redux-form';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
+import { Field, reduxForm } from 'redux-form';
+import swal from 'sweetalert2';
+
 import { register } from '../../actions';
-import { Container, BoxContainer, FieldContainer, Header, Form, Label, Input, Button, LoginLink } from './register-styles';
+import { Container, BoxContainer, FieldContainer, LabelContainer, Header, Form, Label, ErrorText, Input, Button, LoginLink, TermsOfUse, TermsOfUseButton } from './register-styles';
+
 
 class Register extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {registerDataInitialized: false};
+  }
+
+  componentDidUpdate() {
+    if (this.props.registerData == 'success' && this.state.registerDataInitialized) {
+      let self = this;
+      this.setState({registerDataInitialized: false});
+      swal({
+        title: 'Rejestracja przebiegła pomyślnie',
+        type: 'success',
+        confirmButtonText: 'Przejdź na stronę logowania',
+        onClose: function() { self.props.history.push('/logowanie'); }
+      });
+    }
+  }
+
   renderField(field) {
+    const textError = `${field.meta.touched && field.meta.error ? field.meta.error : ''}`;
+
     return (
       <FieldContainer>
-        <Label>{field.label}</Label>
+        <LabelContainer>
+          <Label>{field.label}</Label>
+          <ErrorText>{textError}</ErrorText>
+        </LabelContainer>
         <Input
           type={field.type}
           {...field.input}
         />
-        {field.meta.touched ? field.meta.error : ''}
       </FieldContainer>
     );
   }
 
   onSubmit(values) {
     this.props.register(values);
+    this.setState({registerDataInitialized: true});
+  }
+
+  showTermsOfUse() {
+    swal({
+      title: 'Regulamin',
+      text: 'Lorem ipsum'
+    });
   }
 
   render() {
     const { handleSubmit } = this.props;
+    let registerFailed = '';
+
+    if (this.props.registerData) {
+      registerFailed = this.props.registerData == 'failure' ? 'Podany adres e-mail jest już zajęty' : '';
+    }
 
     return (
       <Container>
         <BoxContainer>
           <Header>Rejestracja</Header>
-          <p>{this.props.registerData}</p>
           <Form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
             <Field
               label="Imię"
@@ -58,10 +95,11 @@ class Register extends Component {
             />
             <Field
               label="Email"
-              type="email"
+              type="text"
               name="email"
               component={this.renderField}
             />
+            <ErrorText>{registerFailed}</ErrorText>
             <Field
               label="Hasło"
               type="password"
@@ -74,9 +112,10 @@ class Register extends Component {
               name="password2"
               component={this.renderField}
             />
+            <TermsOfUse>Rejestrując się zgadzasz się na <TermsOfUseButton onClick={this.showTermsOfUse}>regulamin</TermsOfUseButton></TermsOfUse>
             <Button type="submit">Zarejestruj</Button>
             <LoginLink>
-              <Link to="/logowanie">Logowanie</Link>
+              <Link to="/logowanie" className="callback-link">Logowanie</Link>
             </LoginLink>
           </Form>
         </BoxContainer>
@@ -92,28 +131,88 @@ function validate(values) {
     errors.name = "Wprowadź imię";
   }
 
+  if (values.name) {
+    let regex = /^[a-zA-ZąćęłńóśźżĄĆĘŁŃÓŚŹŻ]+$/,
+        text = values.name;
+    if (!text.match(regex)) {
+      errors.name = "Imię musi posiadać wyłącznie znaki alfanumeryczne";
+    }
+  }
+
   if (!values.surname) {
     errors.surname = "Wprowadź nazwisko";
   }
 
+  if (values.surname) {
+    let regex = /^[a-zA-ZąćęłńóśźżĄĆĘŁŃÓŚŹŻ]+$/,
+        text = values.surname;
+    if (!text.match(regex)) {
+      errors.surname = "Nazwisko musi posiadać wyłącznie znaki alfanumeryczne";
+    }
+  }
+
   if (!values.university) {
-    errors.university = "Wprowadź uniwesytet";
+    errors.university = "Wprowadź nazwę uniwesytetu";
+  }
+
+  if (values.university) {
+    let regex = /^[a-zA-ZąćęłńóśźżĄĆĘŁŃÓŚŹŻ]+$/,
+        text = values.university;
+    if (!text.match(regex)) {
+      errors.university = "Uniwersytet musi posiadać wyłącznie znaki alfanumeryczne";
+    }
   }
 
   if (!values.year_of_study) {
     errors.year_of_study = "Wprowadź rok studiów";
   }
 
+  if (values.year_of_study) {
+    let regex = /^[1-9]{1}$/,
+        text = values.year_of_study;
+    if (!text.match(regex)) {
+      errors.year_of_study = "Rok studiów musi mieścić się w przedziale 1-9";
+    }
+  }
+
   if (!values.email) {
     errors.email = "Wprowadź email";
+  }
+
+  if (values.email) {
+    let regex = /^[^\s]*[0-9a-zA-ZąćęłńóśźżĄĆĘŁŃÓŚŹŻ]+@{1}[0-9a-zA-ZąćęłńóśźżĄĆĘŁŃÓŚŹŻ]+\.[0-9a-zA-ZąćęłńóśźżĄĆĘŁŃÓŚŹŻ]{1}[.0-9a-zA-ZąćęłńóśźżĄĆĘŁŃÓŚŹŻ]+[^\s]*$/,
+        text = values.email;
+    if (!text.match(regex)) {
+      errors.email = "Wprowadź poprawny email";
+    }
   }
 
   if (!values.password) {
     errors.password = "Wprowadź hasło";
   }
 
+  if (values.password) {
+    let regex = /^[^\s]*[0-9a-zA-ZąćęłńóśźżĄĆĘŁŃÓŚŹŻ]+$/,
+        text = values.password;
+    if (!text.match(regex)) {
+      errors.password = "Hasło nie może zawierać znaków białych";
+    }
+  }
+
   if (!values.password2) {
-    errors.password2 = "Wprowadź hasło";
+    errors.password2 = "Ponownie wprowadź hasło";
+  }
+
+  if (values.password2) {
+    let regex = /^[^\s]*[0-9a-zA-ZąćęłńóśźżĄĆĘŁŃÓŚŹŻ]+$/,
+        text = values.password2;
+    if (!text.match(regex)) {
+      errors.password2 = "Hasło nie może zawierać znaków białych";
+    }
+  }
+
+  if (values.password !== values.password2) {
+    errors.password2 = "Hasła nie są identyczne";
   }
 
   return errors;
