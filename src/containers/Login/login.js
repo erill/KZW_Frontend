@@ -45,8 +45,6 @@ class Login extends Component {
     const { handleSubmit } = this.props;
     let loginFailed = '';
 
-    let isLoggedIn = this.props.loginData.hasOwnProperty('token');
-
     if (this.props.loginData) {
       loginFailed = this.props.loginData.message ? 'Niepoprawne dane logowania' : '';
     }
