@@ -38,10 +38,16 @@ class AdminCreateEvent extends Component {
         }
       }).then(response => {
         if (response.data.success) {
-          swal('Event created successfuly');
+          swal({
+              title: 'Stworzono wydarzenie',
+              type: 'success',
+              confirmButtonText: 'Ok',
+              confirmButtonClass: 'ModalButton',
+              buttonsStyling: false
+          });
           this.props.getEvents();
         } else {
-          swal('Something went south');
+          swal('Coś poszło nie tak');
         }
       });
     }

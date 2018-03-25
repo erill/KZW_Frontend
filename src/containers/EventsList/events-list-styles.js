@@ -128,3 +128,8 @@ export const Text = styled.p`
   font-weight: 400;
   font-family: 'LibreBaskervilleItalic',serif;
 `;
+
+export const Icon = styled.span`
+  font-size: 50px;
+  font-weight: 700;
+`;

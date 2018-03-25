@@ -28,7 +28,6 @@ ReactDOM.render(
         <Nav />
         <Switch>
           <Route path="/wydarzenia" component={ EventsList } />
-          {/* <Route path="/profil" component={ UserEventsList } /> */}
           <Route path="/o-projekcie" component={ AboutProject } />
           <Route path="/wspolpraca" component={ Cooperation } />
           <Route path="/galeria" component={ Gallery } />

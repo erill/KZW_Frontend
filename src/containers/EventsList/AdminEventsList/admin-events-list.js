@@ -4,7 +4,7 @@ import ReactTooltip from 'react-tooltip'
 import axios from 'axios';
 
 import { getEvents } from '../../../actions';
-import { Container, Table, TableHead, TableRow, TableData, TableRowHead, Checkbox, AdminButton } from '../events-list-styles';
+import { Container, Table, TableHead, TableRow, TableData, TableRowHead, Checkbox, AdminButton, Icon } from '../events-list-styles';
 
 class AdminEventsList extends Component {
     componentDidMount() {
@@ -16,8 +16,8 @@ class AdminEventsList extends Component {
           data = this.props.events[0].data,
           singleEvent;
 
-      data.forEach(function(res, i) {
-        if (res._id === id) {
+      data.forEach((res, i) => {
+        if (res._id == id) {
           singleEvent = res;
         }
       });
@@ -63,10 +63,10 @@ class AdminEventsList extends Component {
             }
           }).then(response => {
             if (response.data.success) {
-              swal('Event edited successfuly');
+              swal('Wydarzenie zedytowane');
               this.props.getEvents();
             } else {
-              swal('Something went south');
+              swal('Coś poszło nie tak');
             }
           });
         }
@@ -114,8 +114,8 @@ class AdminEventsList extends Component {
                             {event.building}, {event.room}
                         </TableData>
                         <TableData>{event.leftSpots}</TableData>
-                        <TableData change="pointer" id={event._id} onClick={this.editEvent.bind(this)}><i className="fas fa-edit"></i></TableData>
-                        <TableData change="pointer" id={event._id} onClick={this.deleteEvent.bind(this)}><i className="fas fa-times"></i></TableData>
+                        <TableData change="pointer"><Icon id={event._id} onClick={this.editEvent.bind(this)}>+</Icon></TableData>
+                        <TableData change="pointer"><Icon id={event._id} onClick={this.deleteEvent.bind(this)}>+</Icon></TableData>
                     </TableRow>
                 );
             });

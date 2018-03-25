@@ -33,6 +33,10 @@ body {
   font-family: 'RalewayRegular';
 }
 
+.swal2-popup {
+  width: 34em !important;
+}
+
 .ModalButton {
   color: white;
   background: #AE4E5D;
