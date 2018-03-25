@@ -98,6 +98,7 @@ class Nav extends Component {
                 <MenuItem hamburger><Link to="/kontakt" className="link">Kontakt</Link></MenuItem>
                 {userLoggedIn}
                 {userPanel}
+                {userLoggedIn}
               </Menu>
             </MenuContainer>
           ) : (
@@ -110,6 +111,7 @@ class Nav extends Component {
               <MenuItem><Link to="/kontakt" className="link">Kontakt</Link></MenuItem>
               {userLoggedIn}
               {userPanel}
+              {userLoggedIn}
             </Container>
           )
         }
