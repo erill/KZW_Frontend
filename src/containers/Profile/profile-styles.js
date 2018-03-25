@@ -1,10 +1,9 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  margin: 0 12%;
-  padding: 70px 0 40px;
+  padding: 70px 0 20px;
   text-align: center;
-  background-color: #FDFDFD;
+  background-color: #F5F5F5;
   font-family: 'RalewayRegular', sans-serif;
 `;
 

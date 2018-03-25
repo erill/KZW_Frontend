@@ -96,7 +96,6 @@ class Nav extends Component {
                 <MenuItem hamburger><Link to="/wydarzenia" className="link">Zapisy</Link></MenuItem>
                 <MenuItem hamburger><Link to="/galeria" className="link">Galeria</Link></MenuItem>
                 <MenuItem hamburger><Link to="/kontakt" className="link">Kontakt</Link></MenuItem>
-                {userLoggedIn}
                 {userPanel}
                 {userLoggedIn}
               </Menu>
@@ -109,7 +108,6 @@ class Nav extends Component {
               <MenuItem><Link to="/wydarzenia" className="link">Zapisy</Link></MenuItem>
               <MenuItem><Link to="/galeria" className="link">Galeria</Link></MenuItem>
               <MenuItem><Link to="/kontakt" className="link">Kontakt</Link></MenuItem>
-              {userLoggedIn}
               {userPanel}
               {userLoggedIn}
             </Container>

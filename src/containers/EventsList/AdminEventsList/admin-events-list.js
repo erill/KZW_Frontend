@@ -4,7 +4,7 @@ import ReactTooltip from 'react-tooltip'
 import axios from 'axios';
 
 import { getEvents } from '../../../actions';
-import { Container, Table, TableHead, TableRow, TableData, TableRowHead, Checkbox } from '../events-list-styles';
+import { Container, Table, TableHead, TableRow, TableData, TableRowHead, Checkbox, AdminButton } from '../events-list-styles';
 
 class AdminEventsList extends Component {
     componentDidMount() {
@@ -54,8 +54,6 @@ class AdminEventsList extends Component {
           jsonResult['description'] = result.value[6];
           jsonResult['pplLimit'] = result.value[7];
 
-          console.log(jsonResult);
-
           axios({
             method: 'PUT',
             url: `http://localhost:3000/api/event/${id}`,
@@ -96,7 +94,7 @@ class AdminEventsList extends Component {
     renderEvents() {
         const data = this.props.events[0];
         if (data !== undefined) {
-            return data.data.map(event => {
+            return data.data.map((event,index) => {
                 return (
                     <TableRow key={event._id}>
                         <TableData>
@@ -104,11 +102,11 @@ class AdminEventsList extends Component {
                             <br />
                             {event.hour}
                         </TableData>
-                        <TableData data-tip data-for='happyFace'>
+                        <TableData data-tip data-for={'tooltip' + index}>
                             {event.name}
                             <br />
                             <b>{event.speaker}</b>
-                            <ReactTooltip id='happyFace' type='error' place='right' className='Tooltip'>
+                            <ReactTooltip id={'tooltip' + index} type='error' place='right' className='Tooltip'>
                                 {event.description}
                             </ReactTooltip>
                         </TableData>
@@ -116,8 +114,8 @@ class AdminEventsList extends Component {
                             {event.building}, {event.room}
                         </TableData>
                         <TableData>{event.leftSpots}</TableData>
-                        <TableData id={event._id} onClick={this.editEvent.bind(this)}>Edytuj</TableData>
-                        <TableData id={event._id} onClick={this.deleteEvent.bind(this)}>Usuń (X)</TableData>
+                        <TableData change="pointer" id={event._id} onClick={this.editEvent.bind(this)}><i className="fas fa-edit"></i></TableData>
+                        <TableData change="pointer" id={event._id} onClick={this.deleteEvent.bind(this)}><i className="fas fa-times"></i></TableData>
                     </TableRow>
                 );
             });
@@ -126,16 +124,16 @@ class AdminEventsList extends Component {
 
     render() {
         return (
-            <Container>
-                <Table>
+            <Container admin={this.props.admin}>
+                <Table admin={this.props.admin}>
                     <TableHead>
                         <TableRow>
                             <TableRowHead>Data</TableRowHead>
                             <TableRowHead>Warsztat</TableRowHead>
                             <TableRowHead>Miejsce </TableRowHead>
                             <TableRowHead>Ilość miejsc</TableRowHead>
-                            <TableRowHead>Edytuj wydarzenie</TableRowHead>
-                            <TableRowHead>Usuń wydarzenie</TableRowHead>
+                            <TableRowHead>Edytuj</TableRowHead>
+                            <TableRowHead>Usuń</TableRowHead>
                         </TableRow>
                     </TableHead>
                     <tbody>

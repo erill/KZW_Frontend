@@ -68,6 +68,10 @@ export const Input = styled.input`
   border: 3px solid #E1E1E1;
   padding: 6px 0 6px 10px;
   font-size: 14px;
+
+  &:focus {
+    outline: none;
+  }
 `;
 
 export const Button = styled.button`
@@ -88,6 +92,10 @@ export const Button = styled.button`
     color: #AE4E5D;
     cursor: pointer;
   }
+
+  &:focus {
+    outline: none;
+  }
 `;
 
 export const LoginLink = styled.h3`
@@ -106,9 +114,4 @@ export const TermsOfUse = styled.p`
   font-size: 14px;
   letter-spacing: 1px;
   font-family: 'RalewayRegular', sans-serif;
-`;
-
-export const TermsOfUseButton = styled.span`
-  color: #AE4E5D;
-  cursor: pointer;
 `;

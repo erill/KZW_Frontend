@@ -6,7 +6,7 @@ import swal from 'sweetalert2';
 import axios from 'axios';
 
 import { getUserEvents } from '../../../actions';
-import { Container, Table, TableHead, TableRow, TableData, TableRowHead, Checkbox, Wrapper, Button, Title} from '../events-list-styles';
+import { Container, Table, TableHead, TableRow, TableData, TableRowHead, Checkbox, Wrapper, Button, Title, Text} from '../events-list-styles';
 
 class UserEventsList extends Component {
     constructor(props) {
@@ -29,8 +29,8 @@ class UserEventsList extends Component {
             confirmButtonText: 'Logowanie',
             confirmButtonClass: 'ModalButton',
             buttonsStyling: false,
-            footer: 'Lub załóż nowe konto &nbsp; <a href="/rejestracja" class="link"><u>tutaj</u></a>.',
-            preConfirm: () => { 
+            footer: 'Lub załóż nowe konto',
+            preConfirm: () => {
                 this.props.history.push('/logowanie');
             }
         });
@@ -45,7 +45,7 @@ class UserEventsList extends Component {
             onClose: () => {
                 this.props.getUserEvents(this.props.loginData.user._id, this.props.loginData.token);
             }
-        });  
+        });
     }
 
 
@@ -60,7 +60,6 @@ class UserEventsList extends Component {
                   'Authorization': this.props.loginData.token
                 }
             }).then((response) => {
-                console.log(response);
                 if(response.status != 200) {
                     isStatusCodeOk = false;
                 }
@@ -74,11 +73,11 @@ class UserEventsList extends Component {
         }
     }
 
-    renderEvents() { 
+    renderEvents() {
         if (this.props.userEvents.length > 0) {
             const data = this.props.userEvents[0];
-            if (data !== undefined) {                  
-                return data.data.result[0].userEvents.map((event, index) => {
+            if (data !== undefined) {
+                return data.data.map((event, index) => {
                     return (
                         <TableRow key={event._id}>
                             <TableData>
@@ -102,7 +101,7 @@ class UserEventsList extends Component {
                     );
                 });
             }
-        }      
+        }
     }
 
     render() {
@@ -114,6 +113,7 @@ class UserEventsList extends Component {
             <Container>
                 <Wrapper>
                     <Title>Witaj {this.props.loginData.user.name} {this.props.loginData.user.surname}!</Title>
+                    <Text>Oto lista Twoich wydarzeń</Text>
                 </Wrapper>
                 <Table>
                     <TableHead>
@@ -138,9 +138,9 @@ class UserEventsList extends Component {
 }
 
 function mapStateToProps(state) {
-    return { 
-        userEvents : state.userEvents, 
-        loginData : state.loginData 
+    return {
+        userEvents : state.userEvents,
+        loginData : state.loginData
     };
 }
 

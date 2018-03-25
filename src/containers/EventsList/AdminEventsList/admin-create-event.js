@@ -29,7 +29,6 @@ class AdminCreateEvent extends Component {
     }
 
     onSubmit(values) {
-      console.log(values);
       axios({
         method: 'POST',
         url: `http://localhost:3000/api/event/`,

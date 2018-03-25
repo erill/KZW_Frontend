@@ -2,9 +2,8 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   width: 100%;
-  background: #f5f5f5;
-  padding-top: 100px;
-  padding-bottom: 100px;
+  background: #F5F5F5;
+  padding: ${props => props.admin ? '0' : '100px 0' };
 `;
 
 export const Table = styled.table`
@@ -12,10 +11,11 @@ export const Table = styled.table`
   margin: 100px auto;
   padding: 10px;
   font-family: 'RalewayRegular', sans-serif;
-  text-align: left;
+  text-align: center;
   background: #fff;
   border-radius: 3px;
   border-spacing: 0;
+  margin: ${props => props.admin ? '30px auto' : '100px auto' };
 
   @media only screen and (max-width: 1200px) {
     width: 85%;
@@ -68,6 +68,8 @@ export const TableData = styled.td`
   font-size: 20px;
   padding: 15px 10px;
   border-bottom: 2px solid #d58d83;
+  cursor: ${props => props.change ? props.change : 'default' };
+  color: ${props => props.change ? '#605E5E' : 'inherit' };
 
   @media only screen and (max-width: 1200px) {
     font-size: 18px;
@@ -76,14 +78,6 @@ export const TableData = styled.td`
   @media only screen and (max-width: 767px) {
     font-size: 14px;
   }
-`;
-
-export const ButtonWrapper = styled.div`
-  width: 100%;
-`;
-
-export const Button = styled.button`
-  cursor: pointer;
 `;
 
 export const Checkbox = styled.input`
@@ -95,9 +89,7 @@ export const Checkbox = styled.input`
 `;
 
 export const Wrapper = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  text-align: center;
 `;
 
 export const Button = styled.button`
@@ -117,11 +109,22 @@ export const Button = styled.button`
     color: #AE4E5D;
     cursor: pointer;
   }
+
+  &:focus {
+    outline: none;
+  }
 `;
 
 export const Title = styled.h1`
   color: #91414D;
   margin: 0 0 20px;
+  font-weight: 400;
+  font-family: 'LibreBaskervilleItalic',serif;
+`;
+
+export const Text = styled.p`
+  color: #605E5E;
+  font-size: 16px;
   font-weight: 400;
   font-family: 'LibreBaskervilleItalic',serif;
 `;

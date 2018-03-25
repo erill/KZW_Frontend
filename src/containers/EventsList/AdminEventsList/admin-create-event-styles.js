@@ -1,13 +1,13 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  padding: 10% 0;
+  padding: 1% 0 2%;
   text-align: center;
-  background-color: #F6F6F6;
+  background-color: #F5F5F5;
 `;
 
 export const BoxContainer = styled.div`
-  width: 20%;
+  width: 40%;
   margin: 0 auto;
   padding: 25px 40px;
   border-radius: 20px;

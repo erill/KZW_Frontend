@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import { Container, Header } from './profile-styles';
-import EventsList from '../EventsList/AllEventsList/events-list';
+import UserEventsList from '../EventsList/UserEventsList/user-events-list';
 import AdminEventsList from '../EventsList/AdminEventsList/admin-events-list';
 import AdminCreateEvent from '../EventsList/AdminEventsList/admin-create-event';
 AdminCreateEvent
@@ -21,16 +21,16 @@ class Profile extends Component {
     if (!isAdmin) {
       return (
         <Container>
-          <Header>Zwykły user</Header>
-          <EventsList></EventsList>
+          <UserEventsList></UserEventsList>
         </Container>
       );
     } else {
       return (
         <Container>
-          <Header>Admin</Header>
-          <AdminEventsList></AdminEventsList>
-          <AdminCreateEvent></AdminCreateEvent>
+          <Header>Edycja i usuwanie eventu</Header>
+          <AdminEventsList admin></AdminEventsList>
+          <Header>Dodawanie eventu</Header>
+          <AdminCreateEvent admin></AdminCreateEvent>
         </Container>
       );
     }

@@ -36,7 +36,6 @@ class EventsList extends Component {
             confirmButtonText: 'Logowanie',
             confirmButtonClass: 'ModalButton',
             buttonsStyling: false,
-            footer: 'Lub załóż nowe konto &nbsp; <a href="/rejestracja" class="link"><u>tutaj</u></a>.',
             preConfirm: () => {
                 this.props.history.push('/logowanie');
             }
@@ -64,7 +63,6 @@ class EventsList extends Component {
                   'Authorization': this.props.loginData.token
                 }
             }).then((response) => {
-                console.log(response.status);
                 if(response.status != 200) {
                     isStatusCodeOk = false;
                 }
@@ -73,7 +71,7 @@ class EventsList extends Component {
         });
 
         if(isStatusCodeOk) {
-            this.showMessage('Dziękujemy za zapisanie się na warsztaty!', 'success', '<a href="/profil" class="link"><u>Tutaj</u></a> &nbsp; znajdziesz listę wszystkich swoich warsztatów');
+            this.showMessage('Dziękujemy za zapisanie się na warsztaty!', 'success', 'Na swoim profilu znajdziesz listę wszystkich swoich warsztatów');
         } else {
             this.showMessage('Ups! Coś poszło nie tak', 'error', 'Spróbuj ponownie zapisać się później');
         }

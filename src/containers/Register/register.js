@@ -49,13 +49,6 @@ class Register extends Component {
     this.setState({registerDataInitialized: true});
   }
 
-  showTermsOfUse() {
-    swal({
-      title: 'Regulamin',
-      text: 'Lorem ipsum'
-    });
-  }
-
   render() {
     const { handleSubmit } = this.props;
     let registerFailed = '';
@@ -112,7 +105,7 @@ class Register extends Component {
               name="password2"
               component={this.renderField}
             />
-            <TermsOfUse>Rejestrując się zgadzasz się na <TermsOfUseButton onClick={this.showTermsOfUse}>regulamin</TermsOfUseButton></TermsOfUse>
+            <TermsOfUse>Rejestrując się zgadzasz się na <a href="assets/Regulamin_KzW.pdf" target="_blank">regulamin</a></TermsOfUse>
             <Button type="submit">Zarejestruj</Button>
             <LoginLink>
               <Link to="/logowanie" className="callback-link">Logowanie</Link>
