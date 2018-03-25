@@ -38,7 +38,7 @@ class EventsList extends Component {
                     </TableRow>
                 );
             });
-        } 
+        }
     }
 
     render() {

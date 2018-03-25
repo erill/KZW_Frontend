@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Container, Header, PersonContainer, PersonContent, Person, PersonImage, PersonName, PersonText } from './contact-styles';
+import { Container, Header, Text, PersonContainer, PersonContent, Person, PersonImage, PersonName, PersonText } from './contact-styles';
 
 export default class Contact extends Component {
   render() {
@@ -18,22 +18,23 @@ export default class Contact extends Component {
     });
 
     const Person3 = ({
-      src: '../../../img/team/2.jpg',
+      src: '../../../img/team/3.jpg',
       name: 'Paulina Pawelec',
       position: 'Koordynator ds. Marketingu',
       email: 'paulina.pawelec@wiggor.pl',
     });
 
     const Person4 = ({
-      src: '../../../img/team/1.jpg',
+      src: '../../../img/team/4.jpg',
       name: 'Katarzyna Chabraś',
       position: 'Koordynator ds. Public Relations',
-      email: 'katarzyna.jamrozik@wiggor.pl',
+      email: 'katarzyna.chabras@wiggor.pl',
     });
 
     return (
       <Container>
         <Header>Chcesz się z nami skontaktować ?</Header>
+        <Text>Napisz wiadomość do jednej z nas</Text>
         <PersonContainer>
           <PersonContent>
             <PersonImage src={Person1.src} alt={Person1.name} />

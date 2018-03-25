@@ -1,6 +1,7 @@
 import axios from 'axios';
 
 export const LOG_IN = 'log_in';
+export const LOG_OUT = 'log_out';
 export const REGISTER = 'register';
 export const EVENTS = 'events';
 export const USER_EVENTS = 'user_events';
@@ -13,6 +14,13 @@ export function login(values) {
   return {
     type: LOG_IN,
     payload: loginRequest
+  };
+}
+
+export function logout() {
+  return {
+    type: LOG_OUT,
+    payload: {}
   };
 }
 

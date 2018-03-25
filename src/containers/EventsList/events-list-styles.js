@@ -58,7 +58,7 @@ export const TableRowHead = styled.th`
   &:first-of-type {
     border-radius: 3px 0px 0px 3px;
   }
-  
+
   &:last-of-type {
     border-radius: 0px 3px 3px 0px;
   }
@@ -78,6 +78,14 @@ export const TableData = styled.td`
   }
 `;
 
+export const ButtonWrapper = styled.div`
+  width: 100%;
+`;
+
+export const Button = styled.button`
+  cursor: pointer;
+`;
+
 export const Checkbox = styled.input`
   transform: scale(2);
 
@@ -85,3 +93,4 @@ export const Checkbox = styled.input`
     transform: scale(1.5);
   }
 `;
+
