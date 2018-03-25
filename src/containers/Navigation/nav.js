@@ -4,10 +4,16 @@ import { connect } from 'react-redux';
 
 import Media from "react-media";
 import { slide as Menu } from 'react-burger-menu';
+import { logout } from '../../actions';
 import { Container, Image, MenuContainer, MenuItem } from './nav-styles';
 
 
 class Nav extends Component {
+  logoutTest() {
+    this.props.logout();
+    this.props.history.push('/');
+  }
+
   render() {
     var styles = {
       bmBurgerButton: {
@@ -54,25 +60,25 @@ class Nav extends Component {
     let isLoggedIn = this.props.loginData.hasOwnProperty('token');
 
     let userLoggedIn = isLoggedIn ? (
-      <MenuItem><Link to="/" className="link">Wyloguj</Link></MenuItem>
+      <MenuItem><Link to="/" className="link" onClick={this.logoutTest}>Wyloguj</Link></MenuItem>
     ) : (
       <MenuItem><Link to="/logowanie" className="link">Logowanie</Link></MenuItem>
     );
 
     let userLoggedInHamburger = isLoggedIn ? (
-      <MenuItem hamburger><Link to="/" className="link">Wyloguj</Link></MenuItem>
+      <MenuItem hamburger><Link to="/" className="link" onClick={this.logoutTest}>Wyloguj</Link></MenuItem>
     ) : (
       <MenuItem hamburger><Link to="/logowanie" className="link">Logowanie</Link></MenuItem>
     );
 
     let userPanel = isLoggedIn ? (
-      <MenuItem><Link to="/" className="link">Profil</Link></MenuItem>
+      <MenuItem><Link to="/profil" className="link">Profil</Link></MenuItem>
     ) : (
       <MenuItem><Link to="/rejestracja" className="link">Rejestracja</Link></MenuItem>
     );
 
     let userPanelHamburger = isLoggedIn ? (
-      <MenuItem hamburger><Link to="/" className="link">Profil</Link></MenuItem>
+      <MenuItem hamburger><Link to="/profil" className="link">Profil</Link></MenuItem>
     ) : (
       <MenuItem hamburger><Link to="/rejestracja" className="link">Rejestracja</Link></MenuItem>
     );

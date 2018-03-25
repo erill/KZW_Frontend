@@ -47,7 +47,8 @@ export const Person = styled.div`
 `;
 
 export const Pic = styled.img`
-  max-width: 131px;
+  width: 130px;
+  height: 130px;
   border-radius: 50%;
   opacity: 0.7;
   transition: opacity 0.7s;

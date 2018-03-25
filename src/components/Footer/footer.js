@@ -21,7 +21,7 @@ export default class FooterClass extends Component {
           </Item>
           <Item>
             <Title>Adres</Title>
-            <ItemContent> 
+            <ItemContent>
               ul. Kamienna 57/10
               <br />
               53-307 Wrocław
@@ -35,7 +35,6 @@ export default class FooterClass extends Component {
           </Item>
           <Item>
             <Title>Organizator</Title>
-            <p>Stowarzyszenie Studenckie WIGGOR</p>
             <Image src="../../../img/logo-small.png" alt="" />
           </Item>
         </FlexboxWrapper>

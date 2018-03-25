@@ -12,6 +12,7 @@ import AboutProject from './components/AboutProject/about_project';
 import Cooperation from './components/Cooperation/cooperation';
 import Gallery from './components/Gallery/gallery';
 import Contact from './components/Contact/contact';
+import Profile from './containers/Profile/profile';
 import Login from './containers/Login/login';
 import Register from './containers/Register/register';
 import Footer from './components/Footer/footer';
@@ -27,13 +28,14 @@ ReactDOM.render(
         <Nav />
         <Switch>
           <Route path="/wydarzenia" component={ EventsList } />
-          <Route path="/profil" component={ UserEventsList } />
+          {/* <Route path="/profil" component={ UserEventsList } /> */}
           <Route path="/o-projekcie" component={ AboutProject } />
           <Route path="/wspolpraca" component={ Cooperation } />
           <Route path="/galeria" component={ Gallery } />
           <Route path="/logowanie" component={ Login } />
           <Route path="/rejestracja" component={ Register } />
           <Route path="/kontakt" component={ Contact } />
+          <Route path="/profil" component={ Profile } />
           <Route path="/" component={ Homepage } />
         </Switch>
         <Footer />

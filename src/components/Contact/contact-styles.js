@@ -5,21 +5,26 @@ export const Container = styled.div`
   padding: 70px 0 40px;
   text-align: center;
   background-color: #FDFDFD;
-  font-family: 'RalewayRegular', sans-serif;
+  font-family: 'LibreBaskervilleItalic', sans-serif;
 `;
 
 export const Header = styled.h1`
   color: #91414D;
-  font-size: 26px;
+  font-size: 28px;
   font-weight: 400;
   letter-spacing: 2.5px;
+`;
+
+export const Text = styled.p`
+  color: #605E5E;
+  font-size: 16px;
+  letter-spacing: 1px;
 `;
 
 export const PersonContainer = styled.div`
   margin: 5% 0;
   display: flex;
   flex-flow: row wrap;
-  ${'' /* justify-content: space-between; */}
   justify-content: space-around;
 
   @media (max-width: 1185px) {
@@ -75,7 +80,7 @@ export const PersonName = styled.h3`
 `;
 
 export const PersonText = styled.h3`
-  color: black;
+  color: #605E5E;
   letter-spacing: 1px;
   font-size: 14px;
   font-weight: 400;

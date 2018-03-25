@@ -25,7 +25,7 @@ export default class Team extends Component {
     });
 
     const Person3 = ({
-      src: '../../../img/team/2.jpg',
+      src: '../../../img/team/3.jpg',
       alt: 'Paulina Pawelec',
       Fname: 'Paulina',
       Lname: 'Pawelec',
@@ -35,12 +35,12 @@ export default class Team extends Component {
     });
 
     const Person4 = ({
-      src: '../../../img/team/1.jpg',
+      src: '../../../img/team/4.jpg',
       alt: 'Katarzyna Chabraś',
       Fname: 'Katarzyna',
       Lname: 'Chabraś',
       position: 'Koordynator ds. Public Relations',
-      email: 'katarzyna.jamrozik@wiggor.pl',
+      email: 'katarzyna.chabras@wiggor.pl',
       fb: 'https://www.facebook.com/kasia.chabras'
     });
 

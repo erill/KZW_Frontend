@@ -2,7 +2,6 @@ import styled from 'styled-components';
 
 export const Footer = styled.section`
   background: #f2f2f2;
-  backgroung: red;
   display: flex;
   width: 100%;
   font-family: RalewayRegular;
@@ -74,15 +73,16 @@ export const ItemContent = styled.div`
 
 export const Image = styled.img`
   width: 280px;
-  heigth: 100px;
+  height: 100px;
+  padding-top: 15px;
 
   @media (max-width: 991px) {
     width: 250px;
-    heigth: 80px;
+    height: 80px;
   }
 
   @media (max-width: 768px) {
     width: 150px;
-    heigth: 60px;
+    height: 60px;
   }
 `;
