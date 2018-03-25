@@ -66,13 +66,13 @@ class Nav extends Component {
     );
 
     let userPanel = isLoggedIn ? (
-      <MenuItem><Link to="/" className="link">Profil</Link></MenuItem>
+      <MenuItem><Link to="/profil" className="link">Profil</Link></MenuItem>
     ) : (
       <MenuItem><Link to="/rejestracja" className="link">Rejestracja</Link></MenuItem>
     );
 
     let userPanelHamburger = isLoggedIn ? (
-      <MenuItem hamburger><Link to="/" className="link">Profil</Link></MenuItem>
+      <MenuItem hamburger><Link to="/profil" className="link">Profil</Link></MenuItem>
     ) : (
       <MenuItem hamburger><Link to="/rejestracja" className="link">Rejestracja</Link></MenuItem>
     );
@@ -90,8 +90,8 @@ class Nav extends Component {
                 <MenuItem hamburger><Link to="/wydarzenia" className="link">Zapisy</Link></MenuItem>
                 <MenuItem hamburger><Link to="/galeria" className="link">Galeria</Link></MenuItem>
                 <MenuItem hamburger><Link to="/" className="link">Kontakt</Link></MenuItem>
-                {userLoggedIn}
                 {userPanel}
+                {userLoggedIn}
               </Menu>
             </MenuContainer>
           ) : (
@@ -102,8 +102,8 @@ class Nav extends Component {
               <MenuItem><Link to="/wydarzenia" className="link">Zapisy</Link></MenuItem>
               <MenuItem><Link to="/galeria" className="link">Galeria</Link></MenuItem>
               <MenuItem><Link to="/" className="link">Kontakt</Link></MenuItem>
-              {userLoggedIn}
               {userPanel}
+              {userLoggedIn}
             </Container>
           )
         }

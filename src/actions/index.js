@@ -34,8 +34,14 @@ export function getEvents() {
   }
 }
 
-export function getUserEvents() {
-  const events = axios.get(`${ROOT_URL}/event`);
+export function getUserEvents(userId, token) {
+  const events = axios({
+      method: 'GET',
+      url: `${ROOT_URL}/user/${userId}`,
+      headers: {
+        'Authorization': token
+      }
+  });  
 
   return {
     type: USER_EVENTS,

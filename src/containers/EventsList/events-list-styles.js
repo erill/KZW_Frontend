@@ -85,3 +85,35 @@ export const Checkbox = styled.input`
     transform: scale(1.5);
   }
 `;
+
+export const Wrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+export const Button = styled.button`
+  color: white;
+  background-color: #AE4E5D;
+  border: 2px solid #AE4E5D;
+  border-radius: 35px;
+  padding: 12px 55px;
+  font-size: 20px;
+  letter-spacing: 2px;
+  font-weight: 400;
+  font-family: 'RalewayRegular', sans-serif;
+  transition: .5s all;
+
+  &:hover {
+    background-color: white;
+    color: #AE4E5D;
+    cursor: pointer;
+  }
+`;
+
+export const Title = styled.h1`
+  color: #91414D;
+  margin: 0 0 20px;
+  font-weight: 400;
+  font-family: 'LibreBaskervilleItalic',serif;
+`;
