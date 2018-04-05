@@ -22,6 +22,8 @@ class Register extends Component {
         title: 'Rejestracja przebiegła pomyślnie',
         type: 'success',
         confirmButtonText: 'Przejdź na stronę logowania',
+        confirmButtonClass: 'ModalButton',
+        buttonsStyling: false,
         onClose: function() { self.props.history.push('/logowanie'); }
       });
     }

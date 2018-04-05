@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   width: 100%;
+  overflow: auto;
   background: #F5F5F5;
   padding: ${props => props.admin ? '0' : '100px 0' };
 `;
@@ -98,6 +99,7 @@ export const Button = styled.button`
   border: 2px solid #AE4E5D;
   border-radius: 35px;
   padding: 12px 55px;
+  padding: 0.6em 1.3em;
   font-size: 20px;
   letter-spacing: 2px;
   font-weight: 400;

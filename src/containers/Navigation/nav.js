@@ -9,7 +9,7 @@ import { Container, Image, MenuContainer, MenuItem } from './nav-styles';
 
 
 class Nav extends Component {
-  logoutTest() {
+  logoutAttempt() {
     this.props.logout();
     this.props.history.push('/');
   }
@@ -60,13 +60,13 @@ class Nav extends Component {
     let isLoggedIn = this.props.loginData.hasOwnProperty('token');
 
     let userLoggedIn = isLoggedIn ? (
-      <MenuItem><Link to="/" className="link" onClick={this.logoutTest}>Wyloguj</Link></MenuItem>
+      <MenuItem lastElement><Link to="/" className="link" onClick={this.logoutAttempt}>Wyloguj</Link></MenuItem>
     ) : (
-      <MenuItem><Link to="/logowanie" className="link">Logowanie</Link></MenuItem>
+      <MenuItem lastElement><Link to="/logowanie" className="link">Logowanie</Link></MenuItem>
     );
 
     let userLoggedInHamburger = isLoggedIn ? (
-      <MenuItem hamburger><Link to="/" className="link" onClick={this.logoutTest}>Wyloguj</Link></MenuItem>
+      <MenuItem hamburger><Link to="/" className="link" onClick={this.logoutAttempt}>Wyloguj</Link></MenuItem>
     ) : (
       <MenuItem hamburger><Link to="/logowanie" className="link">Logowanie</Link></MenuItem>
     );
@@ -96,8 +96,8 @@ class Nav extends Component {
                 <MenuItem hamburger><Link to="/wydarzenia" className="link">Zapisy</Link></MenuItem>
                 <MenuItem hamburger><Link to="/galeria" className="link">Galeria</Link></MenuItem>
                 <MenuItem hamburger><Link to="/kontakt" className="link">Kontakt</Link></MenuItem>
-                {userPanel}
-                {userLoggedIn}
+                {userPanelHamburger}
+                {userLoggedInHamburger}
               </Menu>
             </MenuContainer>
           ) : (

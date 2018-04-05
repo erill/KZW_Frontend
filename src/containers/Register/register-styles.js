@@ -1,13 +1,13 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  padding: 10% 0;
+  padding: 9em 0 7em;
   text-align: center;
   background-color: #F6F6F6;
 `;
 
 export const BoxContainer = styled.div`
-  width: 20%;
+  width: 30%;
   margin: 0 auto;
   padding: 25px 40px;
   border-radius: 20px;
@@ -17,7 +17,7 @@ export const BoxContainer = styled.div`
     width: 60%;
   }
   @media (min-width: 967px) and (max-width: 1300px) {
-    width: 30%;
+    width: 40%;
   }
 `;
 
@@ -42,6 +42,7 @@ export const Header = styled.h1`
 
 export const ErrorText = styled.p`
   margin: 15px 0 10px;
+  text-align: right;
   color: #AE4E5D;
   font-size: 14px;
   font-weight: 400;
@@ -79,7 +80,7 @@ export const Button = styled.button`
   background-color: #AE4E5D;
   border: 2px solid #AE4E5D;
   border-radius: 35px;
-  padding: 12px 55px;
+  padding: 0.6em 0.9em;
   margin: 30px 0 0;
   font-size: 20px;
   letter-spacing: 2px;

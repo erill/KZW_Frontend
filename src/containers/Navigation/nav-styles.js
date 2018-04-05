@@ -37,6 +37,7 @@ export const MenuContainer = styled.div`
 
 export const MenuItem = styled.div`
   color: #605E5E;
+  margin-right: ${props => props.lastElement ? '30px' : '0' };
   padding: ${props => props.lastElement ? '10px 30px 10px 10px' : '10px' };
   font-size: ${props => props.hamburger ? '16px' : '14px' };
   font-family: ${props => props.hamburger ? 'RalewayBold' : 'RalewayRegular' };
