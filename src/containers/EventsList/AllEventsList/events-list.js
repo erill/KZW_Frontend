@@ -101,7 +101,13 @@ class EventsList extends Component {
                                 {event.building}, {event.room}
                             </TableData>
                             <TableData>{event.leftSpots}</TableData>
-                            <TableData><Checkbox type="checkbox" id={event._id}/></TableData>
+                            <TableData>
+                                {event.leftSpots > 0 ? (
+                                    <Checkbox type="checkbox" id={event._id}/>
+                                ) : (
+                                    <Checkbox type="checkbox" id={event._id} disabled/>
+                                )}
+                            </TableData>
                         </TableRow>
                     );
                 });
