@@ -37,6 +37,25 @@ body {
   width: 34em !important;
 }
 
+.swal2-progresssteps {
+  width: 100%;
+}
+
+.swal2-cancel {
+  color: white;
+  background: #595959;
+  font-weight: 700;
+  outline: none;
+  border: none;
+  text-transform: uppercase;
+  padding: 15px 25px;
+  margin-left: 10px;
+  border-radius: .35em;
+}
+.swal2-title {
+  font-family: 'RalewayRegular';
+}
+
 .ModalButton {
   color: white;
   background: #AE4E5D;

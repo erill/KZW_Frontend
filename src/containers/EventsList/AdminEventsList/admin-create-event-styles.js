@@ -17,7 +17,7 @@ export const BoxContainer = styled.div`
     width: 60%;
   }
   @media (min-width: 967px) and (max-width: 1300px) {
-    width: 30%;
+    width: 40%;
   }
 `;
 
@@ -79,7 +79,7 @@ export const Button = styled.button`
   background-color: #AE4E5D;
   border: 2px solid #AE4E5D;
   border-radius: 35px;
-  padding: 12px 55px;
+  padding: 0.6em 1.3em;
   margin: 30px 0 0;
   font-size: 20px;
   letter-spacing: 2px;

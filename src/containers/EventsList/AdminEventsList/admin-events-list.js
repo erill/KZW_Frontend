@@ -24,8 +24,11 @@ class AdminEventsList extends Component {
 
       swal.setDefaults({
         input: 'text',
-        confirmButtonText: 'Next &rarr;',
+        confirmButtonText: 'Dalej',
+        confirmButtonClass: 'ModalButton',
+        buttonsStyling: false,
         showCancelButton: true,
+        cancelButtonText: 'Anuluj',
         progressSteps: ['1', '2', '3', '4', '5', '6', '7', '8']
       })
 
@@ -63,7 +66,13 @@ class AdminEventsList extends Component {
             }
           }).then(response => {
             if (response.data.success) {
-              swal('Wydarzenie zedytowane');
+              swal({
+                title: 'Wydarzenie zedytowane pomyślnie',
+                type: 'success',
+                confirmButtonText: 'Ok',
+                confirmButtonClass: 'ModalButton',
+                buttonsStyling: false
+              });
               this.props.getEvents();
             } else {
               swal('Coś poszło nie tak');
@@ -83,10 +92,16 @@ class AdminEventsList extends Component {
         }
       }).then(response => {
         if (response.data.success) {
-          swal('Event deleted successfuly');
+          swal({
+            title: 'Event usunięty pomyślnie',
+            type: 'success',
+            confirmButtonText: 'Ok',
+            confirmButtonClass: 'ModalButton',
+            buttonsStyling: false
+          });
           this.props.getEvents();
         } else {
-          swal('Something went south');
+          swal('Coś poszło nie tak');
         }
       });
     }
